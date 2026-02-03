@@ -3,7 +3,15 @@ Day 2:
 - Defined focus: Security + AI
 - Plan: build daily small tools
 
-Learning today:
-- Read about how Nmap works
-- Understood basic port scanning concept
+Focus:
+- Security + AI
+- Building small, learning in public
 
+Learning today:
+- What port scanning is
+- How tools like Nmap discover open ports
+- Difference between TCP and UDP scans
+
+Next steps:
+- Write a simple Python port scanner
+- Run basic Nmap scans on a test host
