@@ -4,7 +4,7 @@ Documenting my journey exploring Cybersecurity, IDS, Automation and AI.
 
 This repo contains:
 - small experiments
-- scripts
+- tools
 - notes
 - mini projects
 
