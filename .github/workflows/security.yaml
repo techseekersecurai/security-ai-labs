@@ -1,0 +1,36 @@
+name: Security Checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  security:
+    runs-on: ubuntu-latest
+
+    steps:
+      -  name: Checkout Code
+         uses: actions/checkout@v4
+
+      -  name: Install Poetry
+         run: pip install poetry
+
+      -  name: Install portscanner deps
+         run: |
+            cd tools/portscanner
+            poetry install
+
+      -  name: Install logscan deps
+         run: |
+            cd tools/logscan
+            poetry install
+
+      -  name: Run port scan
+         run: | 
+            cd tools/portscanner
+            poetry run portscan scanme.nmap.org
+
+      -  name: Run log scan
+         run :|
+             cd tools/logscan
+             poetry run logscan sample.log
