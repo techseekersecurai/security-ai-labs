@@ -26,6 +26,10 @@ def parse_logs(filepath: str):
     if not found:
         print("No suspicious activity found.")
 
+    if found:
+        sys.exit(1)   #fail if suspicious
+    else:
+        sys.exit(0)
 
 def main():
     if len(sys.argv) < 2:
