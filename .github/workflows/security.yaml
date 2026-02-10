@@ -33,4 +33,4 @@ jobs:
       -  name: Run log scan
          run : |
              cd tools/logscan
-             poetry run logscan sample.log
+             poetry run logscan data/sample.log
