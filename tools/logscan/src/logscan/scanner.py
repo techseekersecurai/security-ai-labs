@@ -20,16 +20,23 @@ def parse_logs(filepath: str):
     found = False
     for ip, count in counts.items():
         if count >= THRESHOLD:
-            print(f"{ip} -> {count} failures")
             found = True
 
-    if not found:
-        print("No suspicious activity found.")
-
+    print("\n=== Security Log Summary ===")
     if found:
-        sys.exit(1)   #fail if suspicious
+        print(f"Suspicious IPs detected: {len(counts)}\n")
+        for ip, count in counts.items():
+            if count >= THRESHOLD:
+                print(f"[ALERT] {ip} -> {count} failures")
+
+        print("\nStatus: FAILED")
+        sys.exit(1)
+
     else:
+        print("No suspicious activity detected")
+        print("Status: PASSED")
         sys.exit(0)
+
 
 def main():
     if len(sys.argv) < 2:
